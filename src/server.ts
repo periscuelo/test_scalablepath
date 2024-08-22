@@ -1,10 +1,12 @@
 import express, { Express, Request, Response } from "express";
-import cors from 'cors';
+import cors from "cors";
 import helmet from "helmet";
 import dotenv from "dotenv";
+import swaggerUi from "swagger-ui-express";
+import swaggerFile from './constants/swagger_output.json';
 import routes from './routes';
-import services from "./services";
-import prisma from "../prisma";
+import services from './services';
+import prisma from '../prisma';
 
 dotenv.config();
 
@@ -21,6 +23,8 @@ app.get("/", (req: Request, res: Response) => {
 });
 
 app.use('/', routes);
+
+app.use('/doc', swaggerUi.serve, swaggerUi.setup(swaggerFile));
 
 const server = app.listen(port, () => {
   console.log(`[server]: Server is running at http://localhost:${port}`);
