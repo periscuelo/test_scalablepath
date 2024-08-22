@@ -28,6 +28,8 @@ Build a Node.js application that will fetch data from external sources and then 
 
 ### Solution
 
+Express + Typescript
+
 ## # Prisma basics
 
 ### *Create new migration*
