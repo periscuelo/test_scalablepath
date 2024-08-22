@@ -30,7 +30,10 @@ const services: ServiceObject = {
         throw new Error(`HTTP error! status: ${request.status}`);
       }
 
-      const data = await request.json();
+      const jsonData = await request.json();
+
+      // Sanatize data to avoid issues with autoincrement of PostgreSQL
+      const data = jsonData.map(({ id, ...rest }: Omit<any, 'id'>) => rest);
 
       if (repository) {
         const existData = await repository.count();
