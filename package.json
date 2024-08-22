@@ -4,7 +4,7 @@
   "main": "server.js",
   "scripts": {
     "build": "npx tsc",
-    "start": "node dist/server.js",
+    "start": "pnpm build && node dist/server.js",
     "dev": "pnpm swagger-autogen && nodemon src/server.ts",
     "migrate": "npx prisma migrate",
     "migrations": "pnpm migrate deploy",
