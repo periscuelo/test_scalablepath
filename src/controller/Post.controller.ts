@@ -59,7 +59,7 @@ const controller: ControllerObject = {
       const { id } = req.params as { id?: number };
       const where = { postId: id };
 
-      const data = await commentRepository.findMany(page, limit, where);
+      const data = await commentRepository.findMany(where, page, limit);
       const total_records = await commentRepository.count(where);
       const pagination_reponse = [total_records, Number(page), Number(limit)] as const;
 
