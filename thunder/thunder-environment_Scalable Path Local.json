@@ -1,0 +1,14 @@
+{
+    "clientName": "Thunder Client",
+    "environmentName": "Scalable Path Local",
+    "environmentId": "5038b493-f61d-4c17-9f71-74443bb20b4c",
+    "dateExported": "2024-08-22T20:58:14.983Z",
+    "version": "1.2",
+    "variables": [
+        {
+            "name": "url",
+            "value": "http://localhost:3001"
+        }
+    ],
+    "ref": "dxNdE5Crnn4X_b8aN-1cKBtdBGI0OkGwzcHEmwnQL3wmvqQ_Pc_3_-auUAp0k3yg"
+}

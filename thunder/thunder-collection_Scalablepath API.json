@@ -1,0 +1,149 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "Scalablepath API",
+    "collectionId": "e209bfbe-66a4-42f0-b317-c0ed38d7452a",
+    "dateExported": "2024-08-22T20:57:44.506Z",
+    "version": "1.2",
+    "folders": [
+        {
+            "_id": "3662a8d5-0b20-4b9d-a838-33fc85f904a9",
+            "name": "posts",
+            "containerId": "",
+            "created": "2024-08-22T20:43:44.311Z",
+            "sortNum": 10000
+        },
+        {
+            "_id": "9fb40bb7-bb3d-4f7a-9bd9-e84fa62f4dcb",
+            "name": "comments",
+            "containerId": "",
+            "created": "2024-08-22T20:52:33.633Z",
+            "sortNum": 30000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "71d47e8b-59bc-408b-9b05-6ee0e6ad3ddb",
+            "colId": "e209bfbe-66a4-42f0-b317-c0ed38d7452a",
+            "containerId": "",
+            "name": "/",
+            "url": "{{url}}/",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2024-08-22T20:40:41.034Z",
+            "modified": "2024-08-22T20:42:56.056Z",
+            "headers": []
+        },
+        {
+            "_id": "e4fb73b6-0d73-4ec5-b789-ccca1f8813f9",
+            "colId": "e209bfbe-66a4-42f0-b317-c0ed38d7452a",
+            "containerId": "3662a8d5-0b20-4b9d-a838-33fc85f904a9",
+            "name": "/",
+            "url": "{{url}}/posts",
+            "method": "DELETE",
+            "sortNum": 10000,
+            "created": "2024-08-22T20:49:00.290Z",
+            "modified": "2024-08-22T20:51:01.316Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"ids\": [2, 3]\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "ec9860c9-ae6b-4df3-9d36-cf09914557f0",
+            "colId": "e209bfbe-66a4-42f0-b317-c0ed38d7452a",
+            "containerId": "3662a8d5-0b20-4b9d-a838-33fc85f904a9",
+            "name": "/:id",
+            "url": "{{url}}/posts/1",
+            "method": "DELETE",
+            "sortNum": 20000,
+            "created": "2024-08-22T20:44:01.722Z",
+            "modified": "2024-08-22T20:48:14.559Z",
+            "headers": []
+        },
+        {
+            "_id": "39ca0745-47f7-4a29-885b-7d507c77d2db",
+            "colId": "e209bfbe-66a4-42f0-b317-c0ed38d7452a",
+            "containerId": "3662a8d5-0b20-4b9d-a838-33fc85f904a9",
+            "name": "/:id/comments",
+            "url": "{{url}}/posts/1/comments?page=1&limit=3",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2024-08-22T20:45:24.273Z",
+            "modified": "2024-08-22T20:46:21.848Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "page",
+                    "value": "1",
+                    "isPath": false
+                },
+                {
+                    "name": "limit",
+                    "value": "3",
+                    "isPath": false
+                }
+            ]
+        },
+        {
+            "_id": "c6da1d8c-73fe-4988-8cd3-7d11bf3163b4",
+            "colId": "e209bfbe-66a4-42f0-b317-c0ed38d7452a",
+            "containerId": "3662a8d5-0b20-4b9d-a838-33fc85f904a9",
+            "name": "/:id",
+            "url": "{{url}}/posts?page=1&limit=5",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2024-08-22T20:47:52.038Z",
+            "modified": "2024-08-22T20:47:52.038Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "page",
+                    "value": "1",
+                    "isPath": false
+                },
+                {
+                    "name": "limit",
+                    "value": "5",
+                    "isPath": false
+                }
+            ]
+        },
+        {
+            "_id": "83ee5bb4-b639-4ca3-b7be-32a58f1c8e7a",
+            "colId": "e209bfbe-66a4-42f0-b317-c0ed38d7452a",
+            "containerId": "9fb40bb7-bb3d-4f7a-9bd9-e84fa62f4dcb",
+            "name": "/move",
+            "url": "{{url}}/comments/move",
+            "method": "PATCH",
+            "sortNum": 40000,
+            "created": "2024-08-22T20:53:49.074Z",
+            "modified": "2024-08-22T20:54:58.031Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"from\": 4,\n  \"to\": 5\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "528eba65-edec-45e0-a975-5767d6492958",
+            "colId": "e209bfbe-66a4-42f0-b317-c0ed38d7452a",
+            "containerId": "9fb40bb7-bb3d-4f7a-9bd9-e84fa62f4dcb",
+            "name": "/add/:postId",
+            "url": "{{url}}/comments/add/6",
+            "method": "POST",
+            "sortNum": 50000,
+            "created": "2024-08-22T20:55:36.004Z",
+            "modified": "2024-08-22T20:57:19.818Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"body\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam mollis dui scelerisque, facilisis nunc sit amet, dictum lectus. Proin pulvinar, tellus et consequat porttitor, turpis neque molestie lectus, ut laoreet ligula velit non arcu. Aenean ac mauris id mauris tempor tempus. Nulla semper risus a urna luctus molestie. Phasellus iaculis imperdiet nibh, ut varius odio. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Cras congue lacus eget felis tincidunt, sit amet gravida tellus vulputate.\",\n  \"name\": \"John Doe\",\n  \"email\": \"john.doe@gmail.com\"\n}",
+                "form": []
+            }
+        }
+    ],
+    "ref": "Ph3OUnkAJLUs46LkKJZXfETB7YKVcmqqYY-ypmQjO3wLLQpAjx9D7Eu1vxRVpVSzLc4tQimJugcGN9Gx_eMc2A"
+}
