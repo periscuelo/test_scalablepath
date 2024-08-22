@@ -1,0 +1,5 @@
+{
+  "BAD_REQUEST": "bad request!",
+  "NOT_FOUND": "not found!",
+  "UNEXPECTED_ERROR": "Unexpected error!"
+}

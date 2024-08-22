@@ -1,0 +1,42 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Post {
+  id                Int        @id @default(autoincrement())
+  body              String     @db.Text
+  image             String     @db.VarChar(255)
+  title             String     @db.VarChar(255)
+  userId            Int
+  createdAt         DateTime   @default(now()) @db.Timestamp(6)
+  updatedAt         DateTime   @default(now()) @db.Timestamp(6)
+  deletedAt         DateTime?  @db.Timestamp(6)
+  comments          Comment[]
+
+  @@map(name: "posts")
+}
+
+model Comment {
+  id                Int        @id @default(autoincrement())
+  post              Post       @relation(fields: [postId], references: [id], onUpdate: Cascade)
+  postId            Int
+  body              String     @db.Text
+  name              String     @db.VarChar(255)
+  email             String     @db.VarChar(255)
+  createdAt         DateTime   @default(now()) @db.Timestamp(6)
+  updatedAt         DateTime   @default(now()) @db.Timestamp(6)
+  deletedAt         DateTime?  @db.Timestamp(6)
+
+  @@map(name: "comments")
+}
