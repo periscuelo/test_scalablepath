@@ -18,10 +18,10 @@ interface ControllerObject {
 const controller: ControllerObject = {
   deletePost: async (req, res) => {
     try {
-      const { id } = req.params as { id?: number };
-      const where = { id: Number(id) };
+      const id = Number(req.params.id);
+      const where = { id };
 
-      if (Number(id)) {
+      if (id) {
         const data = await postRepository.delete(where);
 
         if (data) {
@@ -55,13 +55,14 @@ const controller: ControllerObject = {
   },
   getComments: async (req, res) => {
     try {
-      const { page, limit } = req.query as { page?: number; limit?: number };
-      const { id } = req.params as { id?: number };
+      const page = Number(req.query.page);
+      const limit = Number(req.query.limit);
+      const id = Number(req.params.id);
       const where = { postId: id };
 
       const data = await commentRepository.findMany(where, page, limit);
       const total_records = await commentRepository.count(where);
-      const pagination_reponse = [total_records, Number(page), Number(limit)] as const;
+      const pagination_reponse = [total_records, page, limit] as const;
 
       if (total_records > 0 && data.length > 0) {
         const posts = createSuccessResponse(data, ...pagination_reponse);
@@ -75,11 +76,12 @@ const controller: ControllerObject = {
   },
   getPosts: async (req, res) => {
     try {
-      const { page, limit } = req.query as { page?: number; limit?: number };
+      const page = Number(req.query.page);
+      const limit = Number(req.query.limit);
 
       const data = await postRepository.findMany(undefined, page, limit);
       const total_records = await postRepository.count();
-      const pagination_reponse = [total_records, Number(page), Number(limit)] as const;
+      const pagination_reponse = [total_records, page, limit] as const;
 
       if (total_records > 0 && data.length > 0) {
         const posts = createSuccessResponse(data, ...pagination_reponse);
