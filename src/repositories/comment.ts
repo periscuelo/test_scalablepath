@@ -12,6 +12,7 @@ interface Comment {
 
 interface CommentObject {
   count: (queryConditions?: QueryConditions) => PrismaPromise<number>;
+  create: (data: Comment) => Promise<Comment>;
   createMany: (data: Comment[]) => Promise<void>;
   findMany: (queryConditions?: QueryConditions, page?: number, limit?: number) => PrismaPromise<Comment[]>;
   updateMany: (queryConditions: QueryConditions, data: Partial<Comment>) => Promise<GetBatchResult>;
@@ -23,6 +24,9 @@ const comment: CommentObject = {
   count: (queryConditions) => {
     const where = queryConditions ? { where: queryConditions } : {};
     return prisma.comment.count(where);
+  },
+  create: (data) => {
+    return prisma.comment.create({ data });
   },
   createMany: async (data) => {
     await prisma.comment.createMany({
