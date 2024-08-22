@@ -1,5 +1,5 @@
-import postRepository from './repositories/post'
-import commentRepository from './repositories/comment'
+import postRepository from './repositories/post';
+import commentRepository from './repositories/comment';
 
 interface ServiceObject {
   getDataFromThirdApi: () => Promise<void>;
@@ -20,7 +20,7 @@ const services: ServiceObject = {
       name: 'comments',
       url: 'https://www.scalablepath.com/api/test/test-comments',
       repository: 'commentRepository'
-    }]
+    }];
 
     for (const obj of urls) {
       const request = await fetch(obj.url);
@@ -47,4 +47,4 @@ const services: ServiceObject = {
   }
 }
 
-export default services
+export default services;

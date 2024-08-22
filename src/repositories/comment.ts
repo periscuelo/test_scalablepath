@@ -21,19 +21,19 @@ type QueryConditions = Partial<Comment>;
 
 const comment: CommentObject = {
   count: (queryConditions) => {
-    const where = queryConditions ? { where: queryConditions } : {}
-    return prisma.comment.count(where)
+    const where = queryConditions ? { where: queryConditions } : {};
+    return prisma.comment.count(where);
   },
   createMany: async (data) => {
     await prisma.comment.createMany({
       data,
       skipDuplicates: true,
-    })
+    });
   },
   findMany: (queryConditions, page, limit) => {
-    const where = queryConditions ? { where: queryConditions } : {}
-    const LIMIT = Number(limit) || 0
-    const OFFSET = (Number(page) - 1) * LIMIT
+    const where = queryConditions ? { where: queryConditions } : {};
+    const LIMIT = Number(limit) || 0;
+    const OFFSET = (Number(page) - 1) * LIMIT;
 
     const query: Prisma.CommentFindManyArgs = {
       ...where,
@@ -41,14 +41,14 @@ const comment: CommentObject = {
       skip: OFFSET > 0 ? OFFSET : undefined
     }
 
-    return prisma.comment.findMany(query)
+    return prisma.comment.findMany(query);
   },
   updateMany: (queryConditions, data) => {
     return prisma.comment.updateMany({
       where: queryConditions,
       data,
-    })
+    });
   }
 }
 
-export default comment
+export default comment;

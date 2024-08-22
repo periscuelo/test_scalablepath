@@ -17,7 +17,7 @@ app.use(express.json());
 
 app.get("/", (req: Request, res: Response) => {
   res.send("Express + TypeScript Server");
-  services.getDataFromThirdApi()
+  services.getDataFromThirdApi();
 });
 
 app.use('/', routes);
@@ -28,8 +28,8 @@ const server = app.listen(port, () => {
 
 const stopServer = () => {
   server.close();
-  prisma.$disconnect()
-  process.exit(0)
+  prisma.$disconnect();
+  process.exit(0);
 }
 
 process.on('SIGINT', () => {
@@ -46,8 +46,8 @@ process.on('uncaughtException', err => {
 });
 
 process.on('unhandledRejection', (err: any, promise) => {
-  console.error('Unhandled Promise Rejection: promise:', promise)
-  console.error('Unhandled Promise Rejection: reason:', err.message)
-  console.error(String(err.stack))
-  process.exit(0)
+  console.error('Unhandled Promise Rejection: promise:', promise);
+  console.error('Unhandled Promise Rejection: reason:', err.message);
+  console.error(String(err.stack));
+  process.exit(0);
 });
