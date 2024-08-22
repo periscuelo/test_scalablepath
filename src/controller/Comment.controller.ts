@@ -19,7 +19,7 @@ const controller: ControllerObject = {
       const postId = Number(req.params.postId);
       const { body, name, email } = req.body as { body: string, name: string, email: string };
 
-      if (postId) {
+      if (postId && body && name && email) {
         const where = { id: postId };
         const post = await postRepository.count(where);
 
