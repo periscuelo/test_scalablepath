@@ -15,9 +15,9 @@ const response: ResponseObject = {
   createSuccessResponse: (data, ...paginationParams) => {
     const [total_records, page, limit] = paginationParams;
 
-    const total_pages = (limit === 0) ? 0 : Math.ceil(total_records / limit)
-    const next_page =  (page + 1) <= total_pages ? page + 1 : null
-    const prev_page =  page > 1 ? page - 1 : null
+    const total_pages = (limit === 0) ? 0 : Math.ceil(total_records / limit);
+    const next_page =  (page + 1) <= total_pages ? page + 1 : null;
+    const prev_page =  page > 1 ? page - 1 : null;
 
     const pagination = {
       total_records,
@@ -41,4 +41,4 @@ const response: ResponseObject = {
   })
 }
 
-export default response
+export default response;

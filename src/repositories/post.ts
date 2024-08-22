@@ -1,6 +1,6 @@
 import { Prisma, PrismaPromise } from "@prisma/client";
 import { GetBatchResult } from "@prisma/client/runtime/library";
-import prisma from "../../prisma";
+import prisma from '../../prisma';
 
 interface WhereClause {
   id: {

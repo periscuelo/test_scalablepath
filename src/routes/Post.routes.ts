@@ -1,5 +1,5 @@
-import { Router, Request, Response } from 'express';
-import expeditiousCache from 'express-expeditious';
+import { Router, Request, Response } from "express";
+import expeditiousCache from "express-expeditious";
 import PostController from '../controller/Post.controller';
 
 const cache = expeditiousCache({
