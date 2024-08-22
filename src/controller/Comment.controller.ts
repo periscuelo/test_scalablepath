@@ -32,7 +32,7 @@ const controller: ControllerObject = {
           };
 
           const response = await commentRepository.create(data);
-          return res.send(response);
+          return res.status(201).send(response);
         } else {
           return res.status(404).send(createErrorResponse('NOT_FOUND', 'Post to insert a comment'));
         }
