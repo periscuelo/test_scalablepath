@@ -40,7 +40,6 @@ const controller: ControllerObject = {
         return res.status(400).send(createErrorResponse('BAD_REQUEST', 'Comment'));
       }
     } catch (e) {
-      console.log(e);
       return res.status(500).send(e);
     }
   },
