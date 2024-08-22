@@ -55,3 +55,5 @@ process.on('unhandledRejection', (err: any, promise) => {
   console.error(String(err.stack));
   process.exit(0);
 });
+
+export default server;
