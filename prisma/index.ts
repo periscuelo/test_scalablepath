@@ -1,4 +1,4 @@
-import { PrismaClient } from '@prisma/client';
+import { PrismaClient } from "@prisma/client";
 import { softDelete, softDeleteMany, filterSoftDeleted } from './prisma.extensions';
 
 // Initialize Prisma Client with the extensions

@@ -1,5 +1,5 @@
-import { getDMMF } from '@prisma/internals';
-import { readFile } from 'fs/promises';
+import { getDMMF } from "@prisma/internals";
+import { readFile } from "fs/promises";
 
 // Define Interfaces
 interface ModelField {

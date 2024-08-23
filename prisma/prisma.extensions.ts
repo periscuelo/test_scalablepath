@@ -1,4 +1,4 @@
-import { Prisma, PrismaClient } from '@prisma/client';
+import { Prisma, PrismaClient } from "@prisma/client";
 import { getDmmf, getRelationDmmf } from './prisma.dmmf'
 
 // Prisma schema file path
