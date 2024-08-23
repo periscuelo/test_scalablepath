@@ -64,20 +64,20 @@ change SQL on migration as you need and after
 `$ pnpm test` to run the tests.
 
 ### *3 API Docs*
-We have docs for the api in the endpoint `/doc`.
+We have docs for the API in the `/doc` endpoint.
 
-If you add new route files you will need to add the file at array in *swagger.ts* file.
+If you add new route files you will need to add the file to the array in the *swagger.ts* file.
 
-You also can run `$ pnpm swagger-autogen` to update the docs although it's already runned when you run `$ pnpm dev`.
+You also can run `$ pnpm swagger-autogen` to update the docs although it was already run  
+when you run `$ pnpm dev`.
 
 ### *4 Thunder Client*
 One way to make the endpoint test faster is by use this vscode extension.
 
-We have a folder named thunder with all environments to import and of course,
-with the collection.
+We have a folder named Thunder with all environments to import and of course, with the collection.
 
-Is very important to keep the collection updated. In this way all work will be easier.
+It is very important to keep the collection updated. In this way, all work will be easier.
 
-If you prefer, can use postman too, but we will keep updating thunder collections.
+If you prefer, you can use Postman too.
 
-Never used Thunder Client before? This [video](https://www.youtube.com/watch?v=6D0tz7tc-k0) can help!
+Have you never used Thunder Client before? This [video](https://www.youtube.com/watch?v=6D0tz7tc-k0) can help!
