@@ -61,6 +61,8 @@ change SQL on migration as you need and after
 
 `$ pnpm dev` to development version or `$ pnpm start` to prod version.
 
+`$ pnpm test` to run the tests.
+
 ### *3 API Docs*
 We have docs for the api in the endpoint `/doc`.
 
