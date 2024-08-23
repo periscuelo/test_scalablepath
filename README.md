@@ -64,7 +64,7 @@ change SQL on migration as you need and after
 `$ pnpm test` to run the tests.
 
 ### *3 API Docs*
-We have docs for the API in the `/doc` endpoint.
+We have docs for the API in the `/docs` endpoint.
 
 If you add new route files you will need to add the file to the array in the *swagger.ts* file.
 
