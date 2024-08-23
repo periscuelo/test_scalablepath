@@ -28,7 +28,7 @@ Build a Node.js application that will fetch data from external sources and then 
 
 ### Solution
 
-Express + Typescript
+Express + Typescript (Swagger and Thunder Client was a plus)
 
 ## # Prisma basics
 
