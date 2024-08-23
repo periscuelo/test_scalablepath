@@ -2,7 +2,7 @@
     "clientName": "Thunder Client",
     "collectionName": "Scalablepath API",
     "collectionId": "e209bfbe-66a4-42f0-b317-c0ed38d7452a",
-    "dateExported": "2024-08-22T20:57:44.506Z",
+    "dateExported": "2024-08-23T21:04:07.343Z",
     "version": "1.2",
     "folders": [
         {
@@ -63,6 +63,30 @@
             "headers": []
         },
         {
+            "_id": "c6da1d8c-73fe-4988-8cd3-7d11bf3163b4",
+            "colId": "e209bfbe-66a4-42f0-b317-c0ed38d7452a",
+            "containerId": "3662a8d5-0b20-4b9d-a838-33fc85f904a9",
+            "name": "/",
+            "url": "{{url}}/posts?page=4&limit=2",
+            "method": "GET",
+            "sortNum": 25000,
+            "created": "2024-08-22T20:47:52.038Z",
+            "modified": "2024-08-22T21:25:08.282Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "page",
+                    "value": "4",
+                    "isPath": false
+                },
+                {
+                    "name": "limit",
+                    "value": "2",
+                    "isPath": false
+                }
+            ]
+        },
+        {
             "_id": "39ca0745-47f7-4a29-885b-7d507c77d2db",
             "colId": "e209bfbe-66a4-42f0-b317-c0ed38d7452a",
             "containerId": "3662a8d5-0b20-4b9d-a838-33fc85f904a9",
@@ -82,30 +106,6 @@
                 {
                     "name": "limit",
                     "value": "3",
-                    "isPath": false
-                }
-            ]
-        },
-        {
-            "_id": "c6da1d8c-73fe-4988-8cd3-7d11bf3163b4",
-            "colId": "e209bfbe-66a4-42f0-b317-c0ed38d7452a",
-            "containerId": "3662a8d5-0b20-4b9d-a838-33fc85f904a9",
-            "name": "/:id",
-            "url": "{{url}}/posts?page=1&limit=5",
-            "method": "GET",
-            "sortNum": 30000,
-            "created": "2024-08-22T20:47:52.038Z",
-            "modified": "2024-08-22T20:47:52.038Z",
-            "headers": [],
-            "params": [
-                {
-                    "name": "page",
-                    "value": "1",
-                    "isPath": false
-                },
-                {
-                    "name": "limit",
-                    "value": "5",
                     "isPath": false
                 }
             ]
@@ -145,5 +145,5 @@
             }
         }
     ],
-    "ref": "Ph3OUnkAJLUs46LkKJZXfETB7YKVcmqqYY-ypmQjO3wLLQpAjx9D7Eu1vxRVpVSzLc4tQimJugcGN9Gx_eMc2A"
+    "ref": "Ph3OUnkAJLUs46LkKJZXfLSgrhfqUPzVcRTA1wVCV548xOxiojSC_51n0NLb6PQ2dfg-iRjhcESKfhbDmfLZ_A"
 }
