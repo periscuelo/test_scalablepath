@@ -1,5 +1,5 @@
 import { Prisma, PrismaClient } from "@prisma/client";
-import { getDmmf, getRelationDmmf } from './prisma.dmmf'
+import { getDmmf, getRelationDmmf } from './prisma.dmmf';
 
 // Prisma schema file path
 const schemaPath = process.env.DATABASE_SCHEMA || './prisma/schema.prisma';
