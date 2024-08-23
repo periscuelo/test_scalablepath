@@ -11,32 +11,43 @@
     "http"
   ],
   "paths": {
+    "/": {
+      "get": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/comments/move": {
       "patch": {
+        "tags": [
+          "Comments"
+        ],
         "description": "",
         "parameters": [
           {
             "name": "body",
             "in": "body",
+            "required": true,
             "schema": {
               "type": "object",
               "properties": {
-                "body": {
-                  "example": "any"
-                },
-                "name": {
-                  "example": "any"
-                },
-                "email": {
-                  "example": "any"
-                },
                 "from": {
-                  "example": "any"
+                  "type": "number",
+                  "example": 4
                 },
                 "to": {
-                  "example": "any"
+                  "type": "number",
+                  "example": 5
                 }
-              }
+              },
+              "required": [
+                "from",
+                "to"
+              ]
             }
           }
         ],
@@ -61,36 +72,43 @@
     },
     "/comments/add/{postId}": {
       "post": {
+        "tags": [
+          "Comments"
+        ],
         "description": "",
         "parameters": [
           {
             "name": "postId",
             "in": "path",
             "required": true,
-            "type": "string"
+            "type": "number",
+            "description": "Post Id to add comments"
           },
           {
             "name": "body",
             "in": "body",
+            "required": true,
             "schema": {
               "type": "object",
               "properties": {
                 "body": {
-                  "example": "any"
+                  "type": "string",
+                  "example": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam mollis dui scelerisque, facilisis nunc sit amet, dictum lectus. Proin pulvinar."
                 },
                 "name": {
-                  "example": "any"
+                  "type": "string",
+                  "example": "John Doe"
                 },
                 "email": {
-                  "example": "any"
-                },
-                "from": {
-                  "example": "any"
-                },
-                "to": {
-                  "example": "any"
+                  "type": "string",
+                  "example": "john.doe@gmail.com"
                 }
-              }
+              },
+              "required": [
+                "body",
+                "name",
+                "email"
+              ]
             }
           }
         ],
@@ -115,17 +133,20 @@
     },
     "/posts": {
       "get": {
+        "tags": [
+          "Posts"
+        ],
         "description": "",
         "parameters": [
           {
             "name": "page",
             "in": "query",
-            "type": "string"
+            "type": "number"
           },
           {
             "name": "limit",
             "in": "query",
-            "type": "string"
+            "type": "number"
           }
         ],
         "responses": {
@@ -144,66 +165,69 @@
         }
       },
       "delete": {
+        "tags": [
+          "Posts"
+        ],
         "description": "",
         "parameters": [
           {
-            "name": "page",
-            "in": "query",
-            "type": "string"
-          },
-          {
-            "name": "limit",
-            "in": "query",
-            "type": "string"
-          },
-          {
             "name": "body",
             "in": "body",
+            "required": true,
+            "description": "Post Ids to delete, comments will be cascading!",
             "schema": {
               "type": "object",
               "properties": {
                 "ids": {
-                  "example": "any"
+                  "type": "array",
+                  "example": [
+                    2,
+                    3
+                  ],
+                  "items": {
+                    "type": "number"
+                  }
                 }
               }
+            },
+            "example": {
+              "ids": [
+                2,
+                3
+              ]
             }
           }
         ],
         "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "400": {
-            "description": "Bad Request"
-          },
-          "404": {
-            "description": "Not Found"
-          },
-          "500": {
-            "description": "Internal Server Error"
+          "default": {
+            "description": ""
           }
         }
       }
     },
     "/posts/{id}/comments": {
       "get": {
+        "tags": [
+          "Posts"
+        ],
         "description": "",
         "parameters": [
           {
             "name": "id",
             "in": "path",
             "required": true,
-            "type": "string"
+            "type": "number",
+            "description": "Post Id to load comments"
           },
           {
             "name": "page",
             "in": "query",
-            "type": "string"
+            "type": "number"
           },
           {
             "name": "limit",
             "in": "query",
-            "type": "string"
+            "type": "number"
           }
         ],
         "responses": {
@@ -224,49 +248,22 @@
     },
     "/posts/{id}": {
       "delete": {
+        "tags": [
+          "Posts"
+        ],
         "description": "",
         "parameters": [
           {
             "name": "id",
             "in": "path",
             "required": true,
-            "type": "string"
-          },
-          {
-            "name": "page",
-            "in": "query",
-            "type": "string"
-          },
-          {
-            "name": "limit",
-            "in": "query",
-            "type": "string"
-          },
-          {
-            "name": "body",
-            "in": "body",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "ids": {
-                  "example": "any"
-                }
-              }
-            }
+            "type": "number",
+            "description": "Post Id to delete, comments will be cascading!"
           }
         ],
         "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "400": {
-            "description": "Bad Request"
-          },
-          "404": {
-            "description": "Not Found"
-          },
-          "500": {
-            "description": "Internal Server Error"
+          "default": {
+            "description": ""
           }
         }
       }
